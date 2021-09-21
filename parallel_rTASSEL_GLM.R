@@ -28,9 +28,9 @@ tasGLM <- rTASSEL::assocModelFitter(
   fastAssociation = FALSE
 )
 
-write.table(tasGLM$GLM_Stats[order(tasGLM$GLM_Stats$p), ], paste("results/parallelMLM_", feature_names[col_num], ".tsv", sep=""), sep="\t", quote=FALSE)
+write.table(tasGLM$GLM_Stats[order(tasGLM$GLM_Stats$p), ], paste("results/parallelGLM_", feature_names[col_num], ".tsv", sep=""), sep="\t", quote=FALSE)
 
-png(paste("plots/parallelMLM_", feature_names[col_num], ".png", sep=""))
+png(paste("plots/parallelGLM_", feature_names[col_num], ".png", sep=""))
 manhattanPlot(
   assocStats = tasGLM$GLM_Stats,
   trait      = feature_names[col_num],
